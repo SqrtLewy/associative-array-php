@@ -13,11 +13,10 @@ Grade (1-6): <input type="number" name="grade"> <br />
 $name = $_POST['name'];
 $grade = $_POST['grade'];
 
-$grades = array('John' => '4', 'Jack' => '5', 'Daniel' => '6', 'Paul'  => '2', "$name" => "$grade");
+$grades = ['John' => '4', 'Jack' => '5', 'Daniel' => '6', 'Paul'  => '2', "$name" => "$grade"];
 
 ksort($grades);
 
 foreach ($grades as $key => $value)
-    echo $key." received a grade ".$value."<br />";
-
+    echo sprintf('%s received a grade %s <br>', $key, $value);
 ?>
